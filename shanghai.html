@@ -37,7 +37,7 @@ function StartOrStop(img) {
     if (audie.paused) {
         audie.src = sounds[Math.floor(Math.random() * sounds.length)];
         audie.play();
-        img.src = "dance2.GIF";
+        img.src = "dance2.gif";
     } else {
         audie.pause();
         img.src = "dance1.png";
@@ -48,7 +48,7 @@ function StartOrStop(img) {
 
 <script type="text/javascript">
 function changeImage(element) {
-     element.src = element.bln ? "dance1.png" : "dance2.GIF";
+     element.src = element.bln ? "dance1.png" : "dance2.gif";
      element.bln = !element.bln;  
  }
 </script>
