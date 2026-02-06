@@ -1,0 +1,107 @@
+:root{
+  --blue: #fffc56;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+
+body{
+  margin: 5rem;
+  background:rgba(214, 206, 192);
+ 
+  overflow:hidden;
+
+
+  font-family: "Gamja Flower", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.background{
+background-image: url("background.png");
+}
+
+
+#viewport{
+  position:fixed;
+  inset:0;
+  overflow:auto;
+  z-index:1;
+}
+
+
+#world{
+   position:relative;
+
+
+  width: 4000px;
+  height: 2500px;
+
+
+  background-image: url("map.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+
+  background-size: 4000px auto;
+}
+
+
+#pins{
+  position:absolute;
+  inset:0;
+}
+
+
+
+
+.pin{
+  position:absolute;
+  width: 25px;
+  aspect-ratio: 1;
+  background: var(--blue);
+  transform: translate(-50%, -50%);
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,.4);
+
+ 
+  clip-path: polygon(
+    50% 0,
+    calc(50%*(1 + sin(.4turn))) calc(50%*(1 - cos(.4turn))),
+    calc(50%*(1 - sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 + sin(.2turn))) calc(50%*(1 - cos(.2turn))),
+    calc(50%*(1 - sin(.4turn))) calc(50%*(1 - cos(.4turn)))
+  );
+
+
+  animation: twinkleStar 1s ease-in-out infinite;
+}
+
+
+.pin::before{
+  content:"";
+  position:absolute;
+  inset:-18px;               
+  border-radius:50%;
+  pointer-events:none;
+
+
+  opacity: .35;
+}
+
+
+
+/* https://www.youtube.com/watch?v=ZY_PmJX6dAo */
+@keyframes twinkleStar{
+  0%   { opacity:.60; }
+  50%  { opacity:1; }
+  100% { opacity:.60; }
+}
+
+.pin:nth-child(1){ animation-delay: 0s; }
+.pin:nth-child(2){ animation-delay: 1.1s; }
+.pin:nth-child(3){ animation-delay: 2.0s; }
+
+.pin:nth-child(1)::before{ animation-delay: 0s; }
+.pin:nth-child(2)::before{ animation-delay: 1.1s; }
+.pin:nth-child(3)::before{ animation-delay: 2.0s; }

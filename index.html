@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css" />
+ <link rel="icon" type="image/png" href="mouse.png">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>AirPollutioninProv</title> 
+    <style>
+        body {
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            
+            text-align: center;
+           
+  font-family: "Gamja Flower", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(69, 40, 5);
+  /* font-size: 10rem; */
+        }
+
+        h1 {
+            margin-bottom: 20px; 
+            font-size: 60px;
+        }
+
+      
+
+            
+
+
+
+
+
+
+
+        /* https://checolato.github.io/CTC_Porject_1/ */
+
+        .star-container{
+        visibility: hidden; 
+        margin-top: 30px;
+        }
+
+       
+        #starToggle{
+        display: none;
+        }
+
+     
+        .star{
+        font-size: 120px;
+        cursor: pointer;
+        color: transparent;       
+        -webkit-text-stroke: 2px #fffc56;
+        transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+     
+        #starToggle:checked + .star{
+        color: #fffc56;
+        -webkit-text-stroke: 2px #fffc56;
+        transform: scale(1.05);
+        }
+
+     
+    </style>
+</head>
+
+<body class="background">
+    <div>
+        <h1 id="demo"></h1> 
+        
+        <div class="star-container" id="toggleContainer">
+  <input type="checkbox" id="starToggle">
+  <label for="starToggle" class="star" aria-label="Enter map">★</label>
+</div>
+
+    </div>
+
+    <script>
+        var i = 0;
+        var txt = 'Explore Me!'; 
+        var speed = 200;
+
+        
+        window.onload = function() {
+            typeWriter();
+        };
+
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                document.getElementById("toggleContainer").style.visibility = "visible";
+            }
+        }
+
+            document.getElementById("starToggle").addEventListener("change", function () {
+        if (this.checked) {
+            window.location.href = "map.html";
+        }
+        });
+    </script>
+
+</body>
+
+</html>

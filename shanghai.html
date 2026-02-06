@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+
+
+    <link rel="icon" type="image/png" href="mouse.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+
+  <title>Shanghai</title>
+
+
+  <link rel="stylesheet" href="styles.css" />
+
+
+<!-- https://aso01-cyber.github.io/CTC_FinalProject/music.html -->
+
+    <meta charset="UTF-8">
+    <title>musicyay</title>
+      <link rel="stylesheet" href="music.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Ribeye&display=swap');
+
+    </style>
+<script type="text/javascript">
+var sounds = [
+"guangbo.mp3", 
+
+];
+
+function StartOrStop(img) {
+    var audie = document.getElementById("myAudio");
+
+    if (audie.paused) {
+        audie.src = sounds[Math.floor(Math.random() * sounds.length)];
+        audie.play();
+        img.src = "dance2.GIF";
+    } else {
+        audie.pause();
+        img.src = "dance1.png";
+    }
+}
+    
+</script>
+
+<script type="text/javascript">
+function changeImage(element) {
+     element.src = element.bln ? "dance1.png" : "dance2.GIF";
+     element.bln = !element.bln;  
+ }
+</script>
+     
+  </head>
+
+<body class="background">
+
+
+
+  <a href="map.html">← back to map</a>
+  <h1>Baoshan, Shanghai</h1>
+  <p>lets exercise with me! (age 0-9)</p>
+
+
+
+
+
+    <audio id="myAudio"></audio>
+
+    <div id="musictime">
+  <img src="dance1.png" id="changer" onclick="StartOrStop(this)" width="500px">
+</div>
+
+   
+
+   
+
+
+</body>
+</html>
