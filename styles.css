@@ -15,7 +15,16 @@ body{
   font-family: "Gamja Flower", sans-serif;
   font-weight: 400;
   font-style: normal;
+  
 }
+
+.noto-sans-symbols{
+  font-family: "Noto Sans Symbols", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 .background{
 background-image: url("background.png");
@@ -51,8 +60,6 @@ background-image: url("background.png");
   position:absolute;
   inset:0;
 }
-
-
 
 
 .pin{
@@ -105,3 +112,7 @@ background-image: url("background.png");
 .pin:nth-child(1)::before{ animation-delay: 0s; }
 .pin:nth-child(2)::before{ animation-delay: 1.1s; }
 .pin:nth-child(3)::before{ animation-delay: 2.0s; }
+
+
+
+
